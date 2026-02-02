@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruna Cordeiro | Psicóloga Clínica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e Variáveis */
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary: #764ba2;
+            --accent: #25D366;
+            --light: #f8f9fa;
+            --text: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #1DA851);
+        }
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .logo-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        nav li{
+            display: flex;
+            justify-content: center;
+            align-items: center;padding-top: 20px;
+        }
+        nav a {
+            font-weight: 600;
+            color: var(--text);
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        nav a:hover {
+            color: var(--primary);
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 160px 0 100px;
+            margin-top: 90px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        .sobre {
+            background-color: var(--white);
+        }
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .sobre-texto {
+            flex: 1;
+        }
+        .sobre-texto p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .sobre-imagem {
+            flex: 1;
+        }
+        .sobre-imagem img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .localizacao {
+            background-color: #f0f4ff;
+        }
+        .localizacao-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .localizacao-info {
+            flex: 1;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .info-text h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .mapa-container {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .mapa-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+        .agendamento {
+            background-color: var(--white);
+            text-align: center;
+        }
+        .agendamento p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .contato-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .contato-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        .contato-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--white);
+            opacity: 0.5;
+        }
+        .footer-col p, .footer-col a {
+            margin-bottom: 10px;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+        .footer-col a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .sobre-content,
+            .localizacao-container {
+                flex-direction: column;
+            }
+            .hero {
+                padding: 140px 0 80px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }  
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero {
+                padding: 120px 0 60px;
+                margin-top: 120px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .localizacao-container {
+                flex-direction: column-reverse;
+            }
+            .contato-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contato-item {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">BC</div>
+                <div class="logo-text">
+                    <h1>Bruna Cordeiro</h1>
+                    <p>Psicóloga Clínica</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Quem sou</a></li>
+                    <li><a href="#localizacao">Onde fico</a></li>
+                    <li><a href="#agendamento" class="btn btn-whatsapp">Agendar consulta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero fade-in">
+        <div class="container">
+            <h1>Cuidando da sua saúde mental</h1>
+            <p>Atendimento psicológico especializado e humanizado, com foco no seu bem-estar emocional e qualidade de vida.</p>
+            <a href="#agendamento" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Agende sua consulta
+            </a>
+        </div>
+    </section>
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Quem sou</h2>
+            <div class="sobre-content fade-in">
+                <div class="sobre-imagem">
+                    <img src="../PICTURES/foto_perfil.jpg" alt="Bruna Cordeiro - Psicóloga">
+                </div>
+                <div class="sobre-texto">
+                    <p>Sou Bruna Cordeiro, psicóloga clínica com especialização em Terapia Cognitivo-Comportamental e mais de 8 anos de experiência no atendimento psicológico.</p>
+                    <p>Meu trabalho é focado em ajudar pessoas a enfrentarem desafios emocionais, desenvolvendo autoconhecimento e ferramentas para uma vida mais plena e equilibrada.</p>
+                    <p>Acredito que cada pessoa tem recursos internos para superar dificuldades, e meu papel é facilitar esse processo de forma acolhedora e profissional.</p>
+                    <p>Atuo principalmente com questões de ansiedade, depressão, relacionamentos, autoestima e desenvolvimento pessoal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="localizacao" class="localizacao">
+        <div class="container">
+            <h2>Onde fico</h2>
+            <div class="localizacao-container fade-in">
+                <div class="localizacao-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Endereço</h3>
+                            <p>Avenida Saudade, 242 - Bairro das BandeirasAv. da Saudade, 242 - Bairro das Bandeiras<br>Araçatuba - SP, 16010-690</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Horários</h3>
+                            <p>Segunda a Sexta: 7h às 17h<br>Sábado: 7h às 12h</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Telefone</h3>
+                            <p>(18) 99822-2410</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1770054537816!6m8!1m7!1sZNlNkIi_PGd6V0is4wPH0w!2m2!1d-21.21488603865653!2d-50.44559261841543!3f291.34827475674365!4f4.331745565717!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="agendamento" class="agendamento">
+        <div class="container">
+            <h2>Agende sua consulta</h2>
+            <p>Estou aqui para te ajudar nessa jornada de autoconhecimento e bem-estar emocional. Entre em contato e vamos conversar sobre como posso te ajudar.</p>
+            <a href="https://wa.me/5518998222410?text=Olá! Gostaria de agendar uma consulta" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Agendar meu horário</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Bruna Cordeiro</h3>
+                    <p>Psicóloga Clínica CRP 06/153379</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/brunacordeiropsic/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <a href="#sobre">Quem sou</a><br>
+                    <a href="#localizacao">Localização</a><br>
+                    <a href="#agendamento">Agendamento</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. da Saudade, 242 - Bairro das Bandeiras</p>
+                    <p><i class="fas fa-phone"></i>(18) 99822-2410</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Bruna Cordeiro - Psicóloga Clínica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.sobre-content, .localizacao-container, .contato-info').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruna Cordeiro | Psicóloga Clínica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e Variáveis */
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary: #764ba2;
+            --accent: #25D366;
+            --light: #f8f9fa;
+            --text: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #1DA851);
+        }
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .logo-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        nav li{
+            display: flex;
+            justify-content: center;
+            align-items: center;padding-top: 20px;
+        }
+        nav a {
+            font-weight: 600;
+            color: var(--text);
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        nav a:hover {
+            color: var(--primary);
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 160px 0 100px;
+            margin-top: 90px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        .sobre {
+            background-color: var(--white);
+        }
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .sobre-texto {
+            flex: 1;
+        }
+        .sobre-texto p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .sobre-imagem {
+            flex: 1;
+        }
+        .sobre-imagem img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .localizacao {
+            background-color: #f0f4ff;
+        }
+        .localizacao-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .localizacao-info {
+            flex: 1;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .info-text h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .mapa-container {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .mapa-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+        .agendamento {
+            background-color: var(--white);
+            text-align: center;
+        }
+        .agendamento p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .contato-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .contato-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        .contato-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--white);
+            opacity: 0.5;
+        }
+        .footer-col p, .footer-col a {
+            margin-bottom: 10px;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+        .footer-col a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .sobre-content,
+            .localizacao-container {
+                flex-direction: column;
+            }
+            .hero {
+                padding: 140px 0 80px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }  
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero {
+                padding: 120px 0 60px;
+                margin-top: 120px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .localizacao-container {
+                flex-direction: column-reverse;
+            }
+            .contato-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contato-item {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">BC</div>
+                <div class="logo-text">
+                    <h1>Bruna Cordeiro</h1>
+                    <p>Psicóloga Clínica</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Quem sou</a></li>
+                    <li><a href="#localizacao">Onde fico</a></li>
+                    <li><a href="#agendamento" class="btn btn-whatsapp">Agendar consulta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero fade-in">
+        <div class="container">
+            <h1>Cuidando da sua saúde mental</h1>
+            <p>Atendimento psicológico especializado e humanizado, com foco no seu bem-estar emocional e qualidade de vida.</p>
+            <a href="#agendamento" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Agende sua consulta
+            </a>
+        </div>
+    </section>
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Quem sou</h2>
+            <div class="sobre-content fade-in">
+                <div class="sobre-imagem">
+                    <img src="../PICTURES/foto_perfil.jpg" alt="Bruna Cordeiro - Psicóloga">
+                </div>
+                <div class="sobre-texto">
+                    <p>Sou Bruna Cordeiro, psicóloga clínica com especialização em psicanálise e mais de 6 anos de experiência no atendimento psicológico.</p>
+                    <p>Meu trabalho é focado em ajudar pessoas a enfrentarem desafios emocionais, desenvolvendo autoconhecimento e ferramentas para uma vida mais plena e equilibrada.</p>
+                    <p>Acredito que cada pessoa tem recursos internos para superar dificuldades, e meu papel é facilitar esse processo de forma acolhedora e profissional.</p>
+                    <p>Atuo principalmente com questões de ansiedade, depressão, relacionamentos, autoestima e desenvolvimento pessoal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="localizacao" class="localizacao">
+        <div class="container">
+            <h2>Onde fico</h2>
+            <div class="localizacao-container fade-in">
+                <div class="localizacao-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Endereço</h3>
+                            <p>Avenida Saudade, 241 - Bairro das BandeirasAv. da Saudade, 242 - Bairro das Bandeiras<br>Araçatuba - SP, 16010-690</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Horários</h3>
+                            <p>Segunda a Sexta: 7h às 17h<br>Sábado: 7h às 12h</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Telefone</h3>
+                            <p>(18) 99822-2410</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1770054537816!6m8!1m7!1sZNlNkIi_PGd6V0is4wPH0w!2m2!1d-21.21488603865653!2d-50.44559261841543!3f291.34827475674365!4f4.331745565717!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="agendamento" class="agendamento">
+        <div class="container">
+            <h2>Agende sua consulta</h2>
+            <p>Estou aqui para te ajudar nessa jornada de autoconhecimento e bem-estar emocional. Entre em contato e vamos conversar sobre como posso te ajudar.</p>
+            <a href="https://wa.me/5518998222410?text=Olá! Gostaria de agendar uma consulta" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Agendar meu horário</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Bruna Cordeiro</h3>
+                    <p>Psicóloga Clínica CRP 06/153379</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/brunacordeiropsic/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <a href="#sobre">Quem sou</a><br>
+                    <a href="#localizacao">Localização</a><br>
+                    <a href="#agendamento">Agendamento</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. da Saudade, 242 - Bairro das Bandeiras</p>
+                    <p><i class="fas fa-phone"></i>(18) 99822-2410</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Bruna Cordeiro - Psicóloga Clínica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.sobre-content, .localizacao-container, .contato-info').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
+
