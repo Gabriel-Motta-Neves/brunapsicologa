@@ -6,7 +6,6 @@
     <title>Bruna Cordeiro | Psicóloga Clínica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset e Variáveis */
         :root {
             --primary: #667eea;
             --primary-dark: #5a67d8;
@@ -20,13 +19,11 @@
             --transition: all 0.3s ease;
             --border-radius: 12px;
         }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -34,37 +31,30 @@
             background-color: var(--light);
             overflow-x: hidden;
         }
-        
         a {
             text-decoration: none;
             color: inherit;
         }
-        
         ul {
             list-style: none;
         }
-        
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
         section {
             padding: 80px 0;
         }
-        
         h1, h2, h3 {
             line-height: 1.2;
             margin-bottom: 20px;
         }
-        
         h1 {
             font-size: 3rem;
             color: var(--white);
         }
-        
         h2 {
             font-size: 2.5rem;
             color: var(--primary);
@@ -72,7 +62,6 @@
             margin-bottom: 40px;
             position: relative;
         }
-        
         h2::after {
             content: '';
             position: absolute;
@@ -84,7 +73,6 @@
             background: linear-gradient(to right, var(--primary), var(--secondary));
             border-radius: 2px;
         }
-        
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -98,17 +86,13 @@
             font-size: 1rem;
             box-shadow: var(--shadow);
         }
-        
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
         }
-        
         .btn-whatsapp {
             background: linear-gradient(135deg, #25D366, #1DA851);
         }
-        
-        /* Header */
         header {
             background-color: var(--white);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -119,19 +103,16 @@
             z-index: 1000;
             padding: 15px 0;
         }
-        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
         .logo-icon {
             width: 60px;
             height: 60px;
@@ -144,30 +125,25 @@
             font-size: 1.8rem;
             font-weight: bold;
         }
-        
         .logo-text h1 {
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 5px;
         }
-        
         .logo-text p {
             color: var(--text-light);
             font-size: 0.9rem;
         }
-        
         nav ul {
             display: flex;
             gap: 30px;
         }
-        
         nav li {
             display: flex;
             justify-content: center;
             align-items: center;
             padding-top: 20px;
         }
-        
         nav a {
             font-weight: 600;
             color: var(--text);
@@ -175,13 +151,10 @@
             border-radius: 5px;
             transition: var(--transition);
         }
-        
         nav a:hover {
             color: var(--primary);
             background-color: rgba(102, 126, 234, 0.1);
         }
-        
-        /* Hero/Banner */
         .hero {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
@@ -191,25 +164,20 @@
             padding: 160px 0 100px;
             margin-top: 90px;
         }
-        
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 40px;
             opacity: 0.9;
         }
-        
-        /* Sobre */
         .sobre {
             background-color: var(--white);
         }
-        
         .sobre-content {
             display: flex;
             align-items: center;
@@ -217,54 +185,44 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
         .sobre-texto {
             flex: 1;
         }
-        
         .sobre-texto p {
             margin-bottom: 20px;
             color: var(--text-light);
             font-size: 1.1rem;
         }
-        
         .sobre-imagem {
             flex: 1;
         }
-        
         .sobre-imagem img {
             width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
-        
-        /* Localização - AJUSTADO */
         .localizacao {
             background-color: #f0f4ff;
         }
-        
         .localizacao-container {
             display: flex;
-            align-items: stretch; /* Alinha os itens pela altura */
+            align-items: stretch; 
             gap: 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
         .localizacao-info {
-            flex: 1; /* Ocupa metade do espaço */
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        
         .info-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
             margin-bottom: 25px;
         }
-        
         .info-icon {
             width: 50px;
             height: 50px;
@@ -277,60 +235,49 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
-        
         .info-text h3 {
             color: var(--primary);
             margin-bottom: 5px;
         }
-        
         .mapa-container {
-            flex: 1; /* Ocupa a outra metade do espaço */
+            flex: 1;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 500px; /* Altura fixa para alinhamento */
+            height: 500px; 
         }
-        
         .mapa-container iframe {
             width: 100%;
-            height: 100%; /* Ocupa 100% da altura do container */
+            height: 100%;
             border: 0;
         }
-        
-        /* Agendamento */
         .agendamento {
             background-color: var(--white);
             text-align: center;
         }
-        
         .agendamento p {
             max-width: 700px;
             margin: 0 auto 40px;
             color: var(--text-light);
             font-size: 1.1rem;
         }
-        
-        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 60px 0 30px;
         }
-        
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
         .footer-col h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-        
         .footer-col h3::after {
             content: '';
             position: absolute;
@@ -341,24 +288,20 @@
             background-color: var(--white);
             opacity: 0.5;
         }
-        
         .footer-col p, .footer-col a {
             margin-bottom: 10px;
             opacity: 0.9;
             transition: var(--transition);
         }
-        
         .footer-col a:hover {
             opacity: 1;
             padding-left: 5px;
         }
-        
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
         .social-link {
             width: 40px;
             height: 40px;
@@ -369,12 +312,10 @@
             justify-content: center;
             transition: var(--transition);
         }
-        
         .social-link:hover {
             background-color: var(--white);
             color: var(--primary);
         }
-        
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -382,105 +323,81 @@
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
-        /* Responsividade */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.5rem;
             }
-            
             h2 {
                 font-size: 2rem;
             }
-            
             .sobre-content {
                 flex-direction: column;
             }
-            
             .hero {
                 padding: 140px 0 80px;
             }
-            
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
             .mapa-container {
-                height: 1000px; /* Reduz altura em tablets */
+                height: 1000px;
             }
         }
-        
         @media (max-width: 768px) {
             header {
                 padding: 10px 0;
             }
-            
             .header-container {
                 flex-direction: column;
                 gap: 15px;
             }
-            
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
-            
             .hero {
                 padding: 120px 0 60px;
                 margin-top: 120px;
             }
-            
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
             section {
                 padding: 60px 0;
             }
-            
-            /* AQUI: Em telas pequenas, iframe vai para baixo */
             .localizacao-container {
-                flex-direction: column; /* Muda para coluna */
+                flex-direction: column;
                 gap: 40px;
             }
-            
             .mapa-container {
-                height: 1050px; /* Altura adequada para mobile */
-                order: 2; /* Garante que fique depois das informações */
+                height: 1050px;
+                order: 2; 
             }
-            
             .localizacao-info {
-                order: 1; /* Informações primeiro */
+                order: 1;
             }
         }
-        
         @media (max-width: 480px) {
             h1 {
                 font-size: 2rem;
             }
-            
             h2 {
                 font-size: 1.8rem;
             }
-            
             .btn {
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
-            
             .hero h1 {
                 font-size: 1.8rem;
             }
-            
             .hero p {
                 font-size: 1rem;
             }
-            
             .mapa-container {
                 height: 300px; /* Altura menor para celulares */
             }
-            
             .info-item {
                 flex-direction: column;
                 align-items: center;
@@ -492,20 +409,16 @@
                 margin-bottom: 10px;
             }
         }
-        
-        /* Animações */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         .fade-in {
             animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -524,8 +437,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- Hero/Banner -->
     <section class="hero fade-in">
         <div class="container">
             <h1>Cuidando da sua saúde mental</h1>
@@ -535,8 +446,6 @@
             </a>
         </div>
     </section>
-
-    <!-- Sobre -->
     <section id="sobre" class="sobre">
         <div class="container">
             <h2>Quem sou</h2>
@@ -553,8 +462,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Localização -->
     <section id="localizacao" class="localizacao">
         <div class="container">
             <h2>Onde fico</h2>
@@ -589,13 +496,11 @@
                     </div>
                 </div>
                 <div class="mapa-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!3m2!1spt-BR!2sbr!4v1770122744628!5m2!1spt-BR!2sbr!6m8!1m7!1sZNlNkIi_PGd6V0is4wPH0w!2m2!1d-21.21488603865653!2d-50.44559261841543!3f291.34827475674365!4f4.331745565717!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!3m2!1spt-BR!2sbr!4v1770122744628!5m2!1spt-BR!2sbr!6m8!1m7!1sZNlNkIi_PGd6V0is4wPH0w!2m2!1d-21.21488603865653!2d-50.44559261841543!3f291.34827475674365!4f4.331745565717!5f0.7820865974627469" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Agendamento -->
     <section id="agendamento" class="agendamento">
         <div class="container">
             <h2>Agende sua consulta</h2>
@@ -605,8 +510,6 @@
             </a>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -636,7 +539,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -676,4 +578,3 @@
     </script>
 </body>
 </html>
-
