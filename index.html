@@ -160,24 +160,42 @@
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), url('logo.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: var(--white);
             text-align: center;
-            padding: 160px 0 100px;
+            padding: 120px 0 80px;
             margin-top: 90px;
-            min-height: 50vh;
+            position: relative;
+            min-height: 400px; /* Altura fixa para controle */
             display: flex;
             align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 40px;
-            opacity: 0.9;
+            opacity: 0.95;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         }
         .sobre {
             background-color: var(--white);
@@ -202,8 +220,11 @@
         }
         .sobre-imagem img {
             width: 100%;
+            max-width: 400px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
+            display: block;
+            margin: 0 auto;
         }
         .localizacao {
             background-color: #f0f4ff;
@@ -248,7 +269,7 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 500px; 
+            height: 400px; /* Altura reduzida */
         }
         .mapa-container iframe {
             width: 100%;
@@ -338,14 +359,17 @@
                 flex-direction: column;
             }
             .hero {
-                padding: 140px 0 60px;
-                min-height: 60vh;
+                padding: 100px 0 60px;
+                min-height: 350px;
             }
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             .mapa-container {
-                height: 400px;
+                height: 350px;
+            }
+            .sobre-imagem img {
+                max-width: 350px;
             }
         }
         @media (max-width: 768px) {
@@ -365,12 +389,15 @@
                 padding-top: 10px;
             }
             .hero {
-                padding: 120px 0 50px;
+                padding: 80px 0 50px;
                 margin-top: 100px;
-                min-height: 50vh;
+                min-height: 300px;
             }
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
             }
             section {
                 padding: 60px 0;
@@ -380,37 +407,41 @@
                 gap: 40px;
             }
             .mapa-container {
-                height: 350px;
+                height: 300px;
                 order: 2;
             }
             .localizacao-info {
                 order: 1;
             }
+            .sobre-imagem img {
+                max-width: 300px;
+            }
         }
         @media (max-width: 480px) {
             .hero {
-                padding: 100px 0 40px;
+                padding: 70px 0 40px;
                 margin-top: 80px;
-                min-height: 45vh;
+                min-height: 250px;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .btn {
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .hero p {
                 font-size: 1rem;
+                padding: 0 15px;
             }
             .mapa-container {
-                height: 300px;
+                height: 250px;
             }
             .info-item {
                 flex-direction: column;
@@ -423,6 +454,9 @@
             }
             .footer-content {
                 gap: 30px;
+            }
+            .sobre-imagem img {
+                max-width: 250px;
             }
         }
         @keyframes fadeIn {
@@ -587,9 +621,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
