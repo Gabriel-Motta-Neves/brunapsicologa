@@ -164,6 +164,9 @@
             text-align: center;
             padding: 160px 0 100px;
             margin-top: 90px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
         }
         .hero h1 {
             font-size: 3.5rem;
@@ -335,13 +338,14 @@
                 flex-direction: column;
             }
             .hero {
-                padding: 240px 0 80px;
+                padding: 140px 0 60px;
+                min-height: 60vh;
             }
             .hero h1 {
                 font-size: 2.8rem;
             }
             .mapa-container {
-                height: 1000px;
+                height: 400px;
             }
         }
         @media (max-width: 768px) {
@@ -357,9 +361,13 @@
                 justify-content: center;
                 gap: 15px;
             }
+            nav li {
+                padding-top: 10px;
+            }
             .hero {
-                padding: 320px 0 60px;
-                margin-top: 120px;
+                padding: 120px 0 50px;
+                margin-top: 100px;
+                min-height: 50vh;
             }
             .hero h1 {
                 font-size: 2.2rem;
@@ -372,8 +380,8 @@
                 gap: 40px;
             }
             .mapa-container {
-                height: 1050px;
-                order: 2; 
+                height: 350px;
+                order: 2;
             }
             .localizacao-info {
                 order: 1;
@@ -381,7 +389,9 @@
         }
         @media (max-width: 480px) {
             .hero {
-                padding-top: 400px;
+                padding: 100px 0 40px;
+                margin-top: 80px;
+                min-height: 45vh;
             }
             h1 {
                 font-size: 2rem;
@@ -400,7 +410,7 @@
                 font-size: 1rem;
             }
             .mapa-container {
-                height: 300px; /* Altura menor para celulares */
+                height: 300px;
             }
             .info-item {
                 flex-direction: column;
@@ -408,9 +418,11 @@
                 text-align: center;
                 gap: 10px;
             }
-            
             .info-icon {
                 margin-bottom: 10px;
+            }
+            .footer-content {
+                gap: 30px;
             }
         }
         @keyframes fadeIn {
@@ -544,13 +556,11 @@
         </div>
     </footer>
     <script>
-        // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
@@ -560,13 +570,10 @@
                 }
             });
         });
-        
-        // Adiciona classe de animação aos elementos
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -574,16 +581,9 @@
                 }
             });
         }, observerOptions);
-        
-        // Observa os elementos que devem animar
         document.querySelectorAll('.sobre-content, .localizacao-container').forEach(el => {
             observer.observe(el);
         });
     </script>
 </body>
 </html>
-
-
-
-
-
